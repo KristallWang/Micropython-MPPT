@@ -36,4 +36,4 @@ adc = ads1x15.ADS1115(i2c)
 value = adc.read(0)  # 读取通道0
 print(value)
 
-# 调整PWM参数以控制MOSF
+# 调整PWM参数以控制MOSFET
