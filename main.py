@@ -1,7 +1,8 @@
 from machine import Pin, PWM, I2C, ADC
 import time
 from machine import Pin
-
+import ads1115acs712
+from ads1115acs712 import SensorModule
 import  lcd_i2c #mip.install("github:brainelectronics/micropython-i2c-lcd")  
 from lcd_i2c import LCD
 i2c = I2C(scl=Pin(22), sda=Pin(21))  # ESP32的I2C引脚

@@ -1,0 +1,741 @@
+# MPPT Parameters
+
+# Home Assistant配置文件
+# Home Assistant Configuration File
+
+# 用户参数
+# User Parameters
+
+  auth: "InputBlynkAuthenticationToken"  
+  # string
+  # 用户参数 - 输入Blynk认证令牌（注册后通过电子邮件获得）
+  # User Parameter - Input Blynk Authentication Token (From email after registration)
+
+  ssid: "InputWiFiSSID"                  
+  # string
+  # 用户参数 - 输入您的WiFi SSID
+  # User Parameter - Enter Your WiFi SSID
+
+  pass: "InputWiFiPassword"              
+  # string
+  # 用户参数 - 输入您的WiFi密码
+  # User Parameter - Enter Your WiFi Password
+
+# 默认用户参数
+# Default User Parameters
+
+  MPPT_Mode: 1                           
+  # int (0 or 1)
+  # 用户参数 - 启用MPPT算法，禁用时充电器使用CC-CV算法
+  # User Parameter - Enable MPPT algorithm, when disabled charger uses CC-CV algorithm
+
+  output_Mode: 1                         
+  # int (0 or 1)
+  # 用户参数 - 0 = PSU模式, 1 = 充电器模式
+  # User Parameter - 0 = PSU MODE, 1 = Charger Mode
+
+  disableFlashAutoLoad: 0                
+  # int (0 or 1)
+  # 用户参数 - 强制MPPT不使用闪存保存的设置，启用此"1"默认为编程固件设置
+  # User Parameter - Forces the MPPT to not use flash saved settings, enabling this "1" defaults to programmed firmware settings
+
+  enablePPWM: 1                          
+  # int (0 or 1)
+  # 用户参数 - 启用预测PWM，这加速了调节速度（仅适用于电池充电应用）
+  # User Parameter - Enables Predictive PWM, this accelerates regulation speed (only applicable for battery charging application)
+
+  enableWiFi: 1                         
+  # int (0 or 1)
+  # 用户参数 - 启用WiFi连接
+  # User Parameter - Enable WiFi Connection
+
+  enableFan: 1                           
+  # int (0 or 1)
+  # 用户参数 - 启用冷却风扇
+  # User Parameter - Enable Cooling Fan
+
+  enableBluetooth: 1                     
+  # int (0 or 1)
+  # 用户参数 - 启用蓝牙连接
+  # User Parameter - Enable Bluetooth Connection
+
+  enableLCD: 1                           
+  # int (0 or 1)
+  # 用户参数 - 启用LCD显示
+  # User Parameter - Enable LCD display
+
+  enableLCDBacklight: 1                  
+  # int (0 or 1)
+  # 用户参数 - 启用LCD显示的背光
+  # User Parameter - Enable LCD display's backlight
+
+  overrideFan: 0                         
+  # int (0 or 1)
+  # 用户参数 - 风扇始终开启
+  # User Parameter - Fan always on
+
+  enableDynamicCooling: 0                
+  # int (0 or 1)
+  # 用户参数 - 启用PWM冷却控制
+  # User Parameter - Enable for PWM cooling control
+
+  serialTelemMode: 1                    
+  # int (0, 1, 2, or 3)
+  # 用户参数 - 选择串行遥测数据反馈（0 - 禁用串行, 1 - 显示所有数据, 2 - 显示基本数据, 3 - 仅数字）
+  # User Parameter - Selects serial telemetry data feed (0 - Disable Serial, 1 - Display All Data, 2 - Display Essential, 3 - Number only)
+
+  pwmResolution: 11                      
+  # int
+  # 用户参数 - PWM位分辨率
+  # User Parameter - PWM Bit Resolution
+
+  pwmFrequency: 39000                    
+  # int
+  # 用户参数 - PWM切换频率 - Hz（用于Buck）
+  # User Parameter - PWM Switching Frequency - Hz (For Buck)
+
+  temperatureFan: 60                     
+  # int
+  # 用户参数 - 风扇启动温度阈值
+  # User Parameter - Temperature threshold for fan to turn on
+
+  temperatureMax: 90                     
+  # int
+  # 用户参数 - 超温度，超过时系统关闭（摄氏度）
+  # User Parameter - Overtemperature, System Shutdown When Exceeded (deg C)
+
+  telemCounterReset: 0                   
+  # int
+  # 用户参数 - 每次重置遥测数据的时间间隔（整数，0 = 从不, 1 = 天, 2 = 周, 3 = 月, 4 = 年）
+  # User Parameter - Reset Telem Data Every (Integer, 0 = Never, 1 = Day, 2 = Week, 3 = Month, 4 = Year)
+
+  errorTimeLimit: 1000                   
+  # int
+  # 用户参数 - 重置错误计数器的时间间隔（整数，单位：毫秒）
+  # User Parameter - Time interval for resetting error counter (Integer, milliseconds)
+
+  errorCountLimit: 5                     
+  # int
+  # 用户参数 - 错误最大数量（整数）
+  # User Parameter - Maximum number of errors (Integer)
+
+  millisRoutineInterval: 250             
+  # int
+  # 用户参数 - 常规功能刷新率时间间隔（整数，单位：毫秒）
+  # User Parameter - Time Interval Refresh Rate For Routine Functions (Integer, ms)
+
+  millisSerialInterval: 1                
+  # int
+  # 用户参数 - USB串行数据反馈刷新率时间间隔（整数，单位：毫秒）
+  # User Parameter - Time Interval Refresh Rate For USB Serial Datafeed (Integer, ms)
+
+  millisLCDInterval: 1000                
+  # int
+  # 用户参数 - LCD显示刷新率时间间隔（整数，单位：毫秒）
+  # User Parameter - Time Interval Refresh Rate For LCD Display (Integer, ms)
+
+  millisWiFiInterval: 2000               
+  # int
+  # 用户参数 - WiFi遥测刷新率时间间隔（整数，单位：毫秒）
+  # User Parameter - Time Interval Refresh Rate For WiFi Telemetry (Integer, ms)
+
+  millisLCDBackLInterval: 2000           
+  # int
+  # 用户参数 - LCD背光关闭时间间隔（整数，单位：毫秒）
+  # User Parameter - Time Interval For LCD Backlight (Integer, ms)
+
+  backlightSleepMode: 0                  
+  # int
+  # 用户参数 - LCD背光休眠模式（整数，0 = 从不, 1 = 10秒, 2 = 5分钟, 3 = 1小时, 4 = 6小时, 5 = 12小时, 6 = 1天, 7 = 3天, 8 = 1周, 9 = 1月）
+  # User Parameter - LCD Backlight Sleep Mode (Integer, 0 = Never, 1 = 10secs, 2 = 5mins, 3 = 1hr, 4 = 6 hrs, 5 = 12hrs, 6 = 1 day, 7 = 3 days, 8 = 1wk, 9 = 1month)
+
+  baudRate: 500000                       
+  # int
+  # 用户参数 - USB串行波特率（整数，单位：bps）
+  # User Parameter - USB Serial Baud Rate (Integer, bps)
+
+  # 电池参数 
+  # Battery Parameters
+
+  voltageBatteryMax: 27.3000             
+  # float
+  # 用户参数 - 最大电池充电电压（浮点数，单位：V）
+  # User Parameter - Maximum Battery Charging Voltage (Float, Output V)
+
+  voltageBatteryMin: 22.4000             
+  # float
+  # 用户参数 - 最小电池充电电压（浮点数，单位：V）
+  # User Parameter - Minimum Battery Charging Voltage (Float, Output V)
+
+  currentCharging: 30.0000               
+  # float
+  # 用户参数 - 最大充电电流（浮点数，单位：A - 输出）
+  # User Parameter - Maximum Charging Current (Float, A - Output)
+
+  electricalPrice: 9.5000                
+  # float
+  # 用户参数 - 输入电价每千瓦时（浮点数，单位：美元/千瓦时，欧元/千瓦时，比索/千瓦时）
+  # User Parameter - Input electrical price per kWh (Float)
+
+# MPPT充电控制器配置文件
+# MPPT Charge Controller Configuration File
+
+calibration_parameters: 
+  # 校准参数
+  # Calibration Parameters
+  ADS1015_Mode: 0
+    # int
+    # 使用ADS1015 ADC模型设置为1，使用ADS1115 ADC模型设置为0
+    # Use 1 for ADS1015 ADC model, use 0 for ADS1115 ADC model
+
+  ADC_GainSelect: 2
+    # int
+    # ADC增益选择
+    # ADC Gain Selection
+
+  avgCountVS: 3
+    # int
+    # 电压传感器平均采样次数
+    # Voltage Sensor Average Sampling Count
+
+  avgCountCS: 4
+    # int
+    # 电流传感器平均采样次数
+    # Current Sensor Average Sampling Count
+
+  avgCountTS: 500
+    # int
+    # 温度传感器平均采样次数
+    # Temperature Sensor Average Sampling Count
+
+  inVoltageDivRatio: 40.2156
+    # float
+    # 输入电压分压器比率
+    # Input Voltage Divider Sensor Ratio
+
+  outVoltageDivRatio: 24.5000
+    # float
+    # 输出电压分压器比率
+    # Output Voltage Divider Sensor Ratio
+
+  vOutSystemMax: 50.0000
+    # float
+    # 系统最大输出电压
+    # System Maximum Output Voltage
+
+  cOutSystemMax: 50.0000
+    # float
+    # 系统最大输出电流
+    # System Maximum Output Current
+
+  ntcResistance: 10000.00
+    # float
+    # NTC温度传感器的电阻
+    # NTC Temperature Sensor's Resistance
+
+  voltageDropout: 1.0000
+    # float
+    # 降压调节器的压降
+    # Buck Regulator's Dropout Voltage
+
+  voltageBatteryThresh: 1.5000
+    # float
+    # 电池电压阈值
+    # Battery Voltage Threshold
+
+  currentInAbsolute: 31.0000
+    # float
+    # 系统可处理的最大输入电流
+    # Maximum Input Current The System Can Handle
+
+  currentOutAbsolute: 50.0000
+    # float
+    # 系统可处理的最大输出电流
+    # Maximum Output Current The System Can Handle
+
+  PPWM_margin: 99.5000
+    # float
+    # 预测PWM的最小工作占空比
+    # Minimum Operating Duty Cycle for Predictive PWM
+
+  PWM_MaxDC: 97.0000
+    # float
+    # 最大工作占空比
+    # Maximum Operating Duty Cycle
+
+  efficiencyRate: 1.0000
+    # float
+    # 理论降压效率
+    # Theoretical Buck Efficiency
+
+  currentMidPoint: 2.5250
+    # float
+    # 电流传感器中点
+    # Current Sensor Midpoint
+
+  currentSens: 0.0000
+    # float
+    # 电流传感器灵敏度
+    # Current Sensor Sensitivity
+
+  currentSensV: 0.0660
+    # float
+    # 电流传感器灵敏度（毫伏/安培）
+    # Current Sensor Sensitivity (mV/A)
+
+  vInSystemMin: 10.0000
+    # float
+    # 系统最小输入电压
+    # System Minimum Input Voltage
+
+# 系统参数
+# SYSTEM PARAMETERS
+  buckEnable: 0
+  # bool
+  # 系统参数 - Buck使能状态
+  # SYSTEM PARAMETER - Buck Enable Status
+
+  fanStatus: 0
+  # bool
+  # 系统参数 - 风扇活动状态 (1 = 开, 0 = 关)
+  # SYSTEM PARAMETER - Fan activity status (1 = On, 0 = Off)
+
+  bypassEnable: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  chargingPause: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  lowPowerMode: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  buttonRightStatus: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  buttonLeftStatus: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  buttonBackStatus: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  buttonSelectStatus: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  buttonRightCommand: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  buttonLeftCommand: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  buttonBackCommand: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  buttonSelectCommand: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  settingMode: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  setMenuPage: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  boolTemp: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  flashMemLoad: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  confirmationMenu: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  WIFI: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  BNC: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  REC: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  FLV: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  IUV: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  IOV: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  IOC: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  OUV: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  OOV: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  OOC: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  OTE: 0
+  # bool
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  inputSource: 0
+  # int
+  # 系统参数 - 0 = MPPT无电源, 1 = MPPT使用太阳能作为电源, 2 = MPPT使用电池作为电源
+  # SYSTEM PARAMETER - 0 = MPPT has no power source, 1 = MPPT is using solar as source, 2 = MPPT is using battery as power source
+
+  avgStoreTS: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  temperature: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  sampleStoreTS: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  pwmMax: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  pwmMaxLimited: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  PWM: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  PPWM: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  pwmChannel: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  batteryPercent: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  errorCount: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  menuPage: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  subMenuPage: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  ERR: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  conv1: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  conv2: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  intTemp: 0
+  # int
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  VSI: 0.0000
+  # float
+  # 系统参数 - 原始输入电压传感器ADC电压
+  # SYSTEM PARAMETER - Raw input voltage sensor ADC voltage
+
+  VSO: 0.0000
+  # float
+  # 系统参数 - 原始输出电压传感器ADC电压
+  # SYSTEM PARAMETER - Raw output voltage sensor ADC voltage
+
+  CSI: 0.0000
+  # float
+  # 系统参数 - 原始电流传感器ADC电压
+  # SYSTEM PARAMETER - Raw current sensor ADC voltage
+
+  CSI_converted: 0.0000
+  # float
+  # 系统参数 - 实际电流传感器ADC电压
+  # SYSTEM PARAMETER - Actual current sensor ADC voltage
+
+  TS: 0.0000
+  # float
+  # 系统参数 - 原始温度传感器ADC值
+  # SYSTEM PARAMETER - Raw temperature sensor ADC value
+
+  powerInput: 0.0000
+  # float
+  # 系统参数 - 输入功率 (太阳能功率) 单位为瓦特
+  # SYSTEM PARAMETER - Input power (solar power) in Watts
+
+  powerInputPrev: 0.0000
+  # float
+  # 系统参数 - MPPT算法用于存储的之前的输入功率变量 (瓦特)
+  # SYSTEM PARAMETER - Previously stored input power variable for MPPT algorithm (Watts)
+
+  powerOutput: 0.0000
+  # float
+  # 系统参数 - 输出功率 (电池或充电功率 单位为瓦特)
+  # SYSTEM PARAMETER - Output power (battery or charging power in Watts)
+
+  energySavings: 0.0000
+  # float
+  # 系统参数 - 能源节省 (比索, 美元, 欧元等)
+  # SYSTEM PARAMETER - Energy savings in fiat currency (Peso, USD, Euros or etc...)
+
+  voltageInput: 0.0000
+  # float
+  # 系统参数 - 输入电压 (太阳能电压)
+  # SYSTEM PARAMETER - Input voltage (solar voltage)
+
+  voltageInputPrev: 0.0000
+  # float
+  # 系统参数 - MPPT算法用于存储的之前的输入电压变量
+  # SYSTEM PARAMETER - Previously stored input voltage variable for MPPT algorithm
+
+  voltageOutput: 0.0000
+  # float
+  # 系统参数 - 输入电压 (电池电压)
+  # SYSTEM PARAMETER - Input voltage (battery voltage)
+
+  currentInput: 0.0000
+  # float
+  # 系统参数 - 输出功率 (电池或充电电压)
+  # SYSTEM PARAMETER - Output power (battery or charging voltage)
+
+  currentOutput: 0.0000
+  # float
+  # 系统参数 - 输出电流 (电池或充电电流 单位为安培)
+  # SYSTEM PARAMETER - Output current (battery or charging current in Amperes)
+
+  TSlog: 0.0000
+  # float
+  # 系统参数 - NTC热敏电阻热感应代码的一部分
+  # SYSTEM PARAMETER - Part of NTC thermistor thermal sensing code
+
+  ADC_BitReso: 0.0000
+  # float
+  # 系统参数 - 系统检测适用于ADS1015/ADS1115 ADC的适当位分辨率因子
+  # SYSTEM PARAMETER - System detects the appropriate bit resolution factor for ADS1015/ADS1115 ADC
+
+  daysRunning: 0.0000
+  # float
+  # 系统参数 - 存储自上次通电以来MPPT设备运行的总天数
+  # SYSTEM PARAMETER - Stores the total number of days the MPPT device has been running since last powered
+
+  Wh: 0.0000
+  # float
+  # 系统参数 - 存储累积的能量收集 (瓦时)
+  # SYSTEM PARAMETER - Stores the accumulated energy harvested (Watt-Hours)
+
+  kWh: 0.0000
+  # float
+  # 系统参数 - 存储累积的能量收集 (千瓦时)
+  # SYSTEM PARAMETER - Stores the accumulated energy harvested (Kilowatt-Hours)
+
+  MWh: 0.0000
+  # float
+  # 系统参数 - 存储累积的能量收集 (兆瓦时)
+  # SYSTEM PARAMETER - Stores the accumulated energy harvested (Megawatt-Hours)
+
+  loopTime: 0.0000
+  # float
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  outputDeviation: 0.0000
+  # float
+  # 系统参数 - 输出电压偏差 (%)
+  # SYSTEM PARAMETER - Output Voltage Deviation (%)
+
+  buckEfficiency: 0.0000
+  # float
+  # 系统参数 - 测量降压转换器功率转换效率 (仅适用于我的双电流传感器版本)
+  # SYSTEM PARAMETER - Measure buck converter power conversion efficiency (only applicable to my dual current sensor version)
+
+  floatTemp: 0.0000
+  # float
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  vOutSystemMin: 0.0000
+  # float
+  # 校准参数
+  # CALIB PARAMETER
+
+  currentErrorMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  currentButtonMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  currentSerialMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  currentRoutineMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  currentLCDMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  currentLCDBackLMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  currentWiFiMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  currentMenuSetMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  prevButtonMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  prevSerialMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  prevRoutineMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  prevErrorMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  prevWiFiMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  prevLCDMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  prevLCDBackLMillis: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  timeOn: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
+
+  loopTimeStart: 0
+  # unsigned long
+  # 系统参数 - 用于循环周期计时器，记录循环开始时间
+  # SYSTEM PARAMETER - Used for the loop cycle stop watch, records the loop start time
+
+  loopTimeEnd: 0
+  # unsigned long
+  # 系统参数 - 用于循环周期计时器，记录循环结束时间
+  # SYSTEM PARAMETER - Used for the loop cycle stop watch, records the loop end time
+
+  secondsElapsed: 0
+  # unsigned long
+  # 系统参数
+  # SYSTEM PARAMETER
